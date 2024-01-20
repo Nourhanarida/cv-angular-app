@@ -1,0 +1,262 @@
+header {
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 30;
+}
+
+header.home{
+  position: absolute;
+}
+
+header::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(229 229 229 / 8%);
+  z-index: -2;
+  backdrop-filter: blur(10px);
+  transition: all 0.9s linear 0s;
+}
+
+header.home::after{
+  background: none;
+  backdrop-filter: none;
+}
+
+.the_logo {
+  margin-inline-end: 10px
+}
+
+.the_logo img {
+  max-width: 200px;
+  max-height: 50px;
+}
+
+.nav_bar {
+  display: flex;
+  align-items: center;
+  gap: 30px
+}
+
+.nav_bar li.active {
+  color: var(--main);
+}
+
+.nav_bar a{
+  position: relative;
+}
+
+.nav_bar a i{
+  display: none;
+}
+
+.nav_bar a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: var(--main);
+  transition: all 0.2s linear 0s;
+}
+
+.nav_bar a.active::after,
+.nav_bar a:hover::after{
+  width: 25px;
+}
+
+.top_link {
+  display: flex;
+  align-items: center;
+  gap: 15px
+}
+
+
+
+.dropdown-menu:after {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--main);
+  top: 0px;
+  right: 10px;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.dropdown-item {
+  padding: 11px 15px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+header .btn-main {
+  width: 130px;
+  margin: 0;
+}
+
+header .btn-main > i{
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+
+  .nav_bar {
+      flex-direction: column;
+      position: fixed;
+      left: 0px;
+      top: 50%;
+      transform: translate(-100% ,-50%);
+      width: auto;
+      height: auto;
+      z-index: 40;
+      color: #FFFFFF;
+      gap: 12px;
+      border-radius: 50px;
+      padding: 5px;
+      background: rgb(229 229 229 / 5%);
+      backdrop-filter: blur(3px);
+      border: 1px solid var(--main);
+  }
+
+  .nav_bar:hover{
+    transform: translate(0 ,-50%);
+    left: 5px;
+  }
+
+  .nav_bar::after{
+    content: "\f054";
+    width: 18px;
+    height: 50px;
+    background-color: var(--main);
+    position: absolute;
+    right: 0;
+    top: 24px;
+    transform: translateX(100%);
+    border-radius: 0 50px 50px 0;
+    font-family: 'FontAwesome';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav_bar::before{
+    content: "";
+    display: block;
+    width: 18px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 24px;
+    transform: translateX(100%);
+    border-radius: 0 50px 50px 0;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: var(--main);
+    animation: swap 1s linear 0s infinite;
+  }
+
+  @keyframes swap {
+    100% {
+        transform: scale(1.4) translateX(100%);
+        opacity: 0
+    }
+}
+
+  .nav_bar a i{
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+  }
+
+  .nav_bar a span,
+  .nav_bar a::after,
+  header .btn-main > span{
+    display: none;
+  }
+
+  .nav_bar a {
+    width: 45px;
+    height: 45px;
+    display: block;
+    border-radius: 50%;
+    background-color: var(--main2);
+    border: 1px solid transparent;
+  }
+
+  .nav_bar a:hover{
+    border-color: var(--main);
+  }
+  .nav_bar a.active{
+    background-color: var(--main);
+  }
+
+  header .btn-main{
+    width: 50px;
+    height: 50px;
+    font-size: 23px;
+    overflow: visible;
+    position: fixed;
+    z-index: 40;
+    right: 15px;
+    bottom: 15px;
+    opacity: 0.7;
+  }
+
+  header .btn-main:hover{
+    opacity: 1;
+  }
+
+  header .btn-main:after,
+  header .btn-main:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      border: 1px solid var(--main);
+      animation: wivs 1s linear 0s infinite;
+      transform: none;
+      background-color: transparent;
+      margin: 0;
+      z-index: -1;
+  }
+
+  header .btn-main:before {
+    animation: wivs 2s linear 0s infinite;
+  }
+
+@keyframes wivs {
+  100% {
+    transform: scale(1.8);
+    opacity: 0
+  }
+}
+
+
+  header .btn-main i{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}

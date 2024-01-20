@@ -1,0 +1,26 @@
+.imgProfile{
+  width: 100%;
+  height: 485px;
+  overflow: hidden;
+  border-radius: 12px;
+ }
+
+ .imgProfile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ }
+
+ .itemInfoBack {
+  margin: 10px 0;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px
+ }
+
+ .itemInfoBack span{
+  min-width: 80px;
+  border-inline-end: 1px solid var(--gray);
+  padding-inline-end: 5px;
+ }

@@ -1,0 +1,93 @@
+.titleLine::after,
+.titleLine::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background-color: var(--main2);
+  border-radius: 5px;
+}
+
+.titleLine::before{
+  width: 40px;
+  background-color: var(--main);
+  z-index: 2;
+}
+
+.boxED-EX {
+  padding: 20px 0;
+  position: relative;
+}
+
+.boxED-EX:not(:last-child)::after{
+  content: "";
+  width: 95%;
+  height: 2px;
+  background-color: var(--main2);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.boxED-EX .title_1{
+  padding: 7px 10px;
+  border: 1px solid var(--main);
+  border-radius: 50px;
+  flex-shrink: 0;
+  margin-inline-end: 12px;
+  position: relative;
+}
+
+.boxED-EX .title_1::after{
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translate(100% ,-50%);
+  border-width: 8px 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--main);
+}
+
+.boxED-EX .title_2{
+  padding: 7px 10px;
+  flex-grow: 1;
+  background: linear-gradient(90deg, #181B31 -0.52%, #23263A 87.96%);
+}
+
+
+.BoxCertificates {
+  background: var(--main2);
+  display: flex;
+  border: 1px solid #353951;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.BoxCertificates .icon{
+  background-color: #353951;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 125px;
+  min-height: 140px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.BoxCertificates .info {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.progress {
+  height: 16px;
+  padding: 4px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid var(--gray);
+}

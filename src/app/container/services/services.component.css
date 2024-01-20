@@ -1,0 +1,54 @@
+.h1{
+  max-width: 400px;
+}
+.itemsServices{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.itemsServices > div:nth-child(even){
+  transform: translateX(18px);
+}
+
+.boxService{
+  background-color: var(--main2);
+  padding: 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.boxService .icon{
+  width: 75px;
+  height: 75px;
+  background-color: var(--main);
+  flex-shrink: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-inline-end: 18px;
+}
+
+.boxService::after{
+  content: attr(data-number);
+  color: #393c4e;
+  font-weight: bolder;
+  place-self: flex-start;
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  font-size: 32px;
+  z-index: -1;
+}
+
+
+@media (max-width: 575.98px) {
+  .itemsServices > div:nth-child(even){
+    transform: translateX(0) !important;
+  }
+}

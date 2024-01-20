@@ -1,0 +1,35 @@
+<header [ngClass]="linkurl === '/index' ? 'home' : ''">
+  <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+          <a [routerLink]="['/index']" class="the_logo"><img src="../../../assets/imgs/logo.png"></a>
+          <ul class="nav_bar">
+              <li><a [routerLink]="['/index']"  routerLinkActive="active"><i class="fas fa-home" placement="top" ngbTooltip="{{'Home' | translate}}"></i> <span>{{"Home" | translate}}</span></a></li>
+              <li><a [routerLink]="['/aboutUs']" routerLinkActive="active"><i class="far fa-user" placement="top" ngbTooltip="About Us"></i> <span>About Us</span></a></li>
+              <li><a [routerLink]="['/services']" routerLinkActive="active"><i class="fas fa-server" placement="top" ngbTooltip="Services"></i> <span>Services</span></a></li>
+              <li><a [routerLink]="['/resume']" routerLinkActive="active"><i class="far fa-file" placement="top" ngbTooltip="Resume"></i> <span>Resume</span></a></li>
+              <li><a [routerLink]="['/portfolio']" routerLinkActive="active"><i class="fas fa-book" placement="top" ngbTooltip="Portfolio"></i> <span>Portfolio</span></a></li>
+          </ul>
+          <div class="d-flex align-items-center">
+              <ul class="top_link">
+                  <li><a [routerLink]="['/contactUs']" class="btn-main"><i class="fas fa-phone-alt" placement="top" ngbTooltip="Contact Us"></i> <span>Contact Us</span></a></li>
+                  <li>
+                    <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                        <button type="button" class="text-white p-0" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()"><i class="fas fa-globe"></i> language</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                            <button ngbDropdownItem (click)="changeCurentLang('en')">English</button>
+                            <button ngbDropdownItem (click)="changeCurentLang('ar')">Arabic</button>
+                        </div>
+                    </div>
+                  </li>
+              </ul>
+              <!-- <div class="close-open-nav">
+                  <div>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </div>
+              </div> -->
+          </div>
+      </div>
+  </div>
+</header>
